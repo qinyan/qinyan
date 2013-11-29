@@ -1,0 +1,13 @@
+<%= form_for @blog do |f|%>
+  <p>
+    <%= f.label :name, '日志标题:' %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :content, '日志内容:' %>
+    <%= f.cktext_area("content",:width => '100%')  %>
+  </p>
+  <p>
+    <%= f.submit '保存'%>
+  </p>
+<% end -%>

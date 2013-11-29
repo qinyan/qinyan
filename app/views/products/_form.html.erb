@@ -1,0 +1,19 @@
+<%= form_for @product, :validate => true do |f| %>
+  <p>
+    <%= f.label :name, '产品名称：' %>
+    <%= f.text_field :name%></br>
+  </p>
+  <p>
+    <%= f.label :price, '产品价格：' %>
+    <%= f.text_field :price%></br>
+  </p>
+  <p>
+    <%= f.label :image, '产品图片：' %>
+    <%= f.file_field :image%></br>
+  </p>
+  <div>
+    <%= f.label :description, "产品描述：" %></br>
+    <%= f.text_area :description, size: "20x7" %></br>
+  </div>
+  <%= f.submit '创建' %>
+<% end %>

@@ -1,0 +1,16 @@
+<%= render 'nav'%>
+<div class="contenter">
+  <% @blogs.each do |blog| %>
+    <div class="blog_list_tit">
+      <h3><%= link_to blog.name, blog_path(blog) %></h3>
+      <% if @current_user.present? and @current_user.id == blog.user_id%>
+        <span>
+          <a href="<%= edit_blog_path(blog)%>"><em class="ban ban_1_1"></em>编辑</a>
+          <a href="<%= blog_path(blog)%>" data-confirm="确定要删除吗？" data-method="delete"><em class="ban ban_1_2"></em>删除</a>
+        </span>
+      <% end -%>
+    </div>
+    <p><%= blog.intro.html_safe %></p>
+  <% end -%>
+</div>
+<%= will_paginate @blogs, :previous_label=> '« 上一页', :next_label => '下一页 »'%>

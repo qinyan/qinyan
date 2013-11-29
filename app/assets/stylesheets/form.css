@@ -1,0 +1,54 @@
+.container {width: 960px;}
+
+.span9 {width: 780px;}
+.span9 div.tab {border-bottom: 1px solid #3D79CC;height: 26px;line-height: 26px;}
+.span9 div.tab ul {float: right; list-style: none outside none; margin-top: -30px; padding: 0; width: 400px;}
+.span9 div.tab ul li{float: right; line-height: 32px; width: 60px;}
+
+.span9 div.contenter {clear: both;font-size: 14px;}
+.span9 div.contenter .title {color:#3D79cc; height: 30px; margin-top: 10px; text-align:center;}
+
+.span9 div.contenter .blog_list_tit span {float: right; margin-top: -30px;padding: 0;}
+.span9 div.contenter .blog_list_tit span a{color:#7E7E7E; cursor: pointer; float: left; margin-left: 10px;}
+
+.span9 div.contenter .product_list_tit span {float: right; margin-top: -40px;padding: 0;}
+.span9 div.contenter .product_list_tit span a{color:#7E7E7E; cursor: pointer; float: left; margin-left: 10px;}
+
+.span9 h3 a{color: #3D79CC;font-size: 14px;}
+
+span a em {cursor: pointer;float: left;}
+span a em.ban { background: url("/images/icon_qy.png?v=20131025") no-repeat scroll 0 0 rgba(0, 0, 0, 0);display: inline-block; height: 20px;line-height: 20px; text-align: center; width: 20px;}
+span a em.ban_1_1 {background-position: -120px -60px;}
+span a em.ban_1_2 {background-position: -140px -61px;}
+
+/*home index*/
+.span9 .contenter .list_title{background: #D7E5EF; font-size: 20px; font-style: oblique; height: 35px;line-height: 35px;}
+.span9 .contenter .list_title span{margin-left: 2px}
+.span9 .contenter .list_info {margin-left: 15px}
+.span9 .contenter .list_info ul{list-style: none outside none; margin-left: 15px; padding-top: 15px}
+.span9 .contenter .list_info ul li{float: left;width: 120px;}
+.span9 .contenter .list_info ul li p.img{width: 98px;height: 110px;border: 1px solid #D9D9D9;text-align: center;line-height:104px;}
+.span9 .contenter .list_info ul li p img{margin-top: 4px;}
+.span9 .contenter .list_info ul li p{text-align: center; width: 100px;}
+
+
+
+
+.span2 {width: 150px;}
+.span2 .sidebar-nav .user_info_logo {width: 100px;border: 1px solid #CCCCCC;border-radius: 5px 5px 5px 5px;height: 110px;line-height: 110px; text-align: center;}
+.span2 .sidebar-nav span{ float: left; text-align: center; width: 100px;}
+.span3 .sidebar-nav .user_info{float: left; width: 100px}
+.span3 .sidebar-nav .user_info p{font-size: 16px; margin-top: 4px; padding-left: 14px;}
+.span3 .sidebar-nav ul.nav-list{clear: both;}
+
+
+.pagination span.disabled {border: 1px solid #CCCCCC;color: #D1D1D1;margin: 2px;padding: 2px 5px;}
+.pagination a {border: 1px solid #999999;color: #666666; margin: 2px;padding: 2px 5px;text-decoration: none;}
+
+.container footer{margin-top: 40px}
+
+
+
+.field_with_errors {display: inline;} 
+.field_with_errors .message {color: #D00;padding-left: 5px;font-size: 12px;}
+textarea{width: 463px; height: 200px;}

@@ -1,0 +1,17 @@
+
+<%= render 'nav'%>
+<div class="contenter">
+  <% @products.each do |product| %>
+    <div class="product_list_tit">
+      <h3><%= link_to product.name, product_path(product) %></h3>
+      <% if @current_user.present?%>
+        <span>
+          <a href="<%= edit_product_path(product)%>"><em class="ban ban_1_1"></em>编辑</a>
+          <a href="<%= product_path(product)%>" data-confirm="确定要删除吗？" data-method="delete"><em class="ban ban_1_2"></em>删除</a>
+        </span>
+      <% end -%>
+    </div>
+    <p><%= product.description %></p>
+  <% end -%>
+</div>
+<%= will_paginate @products, :previous_label=> '« 上一页', :next_label => '下一页 »' %>

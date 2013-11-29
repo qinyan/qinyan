@@ -1,0 +1,27 @@
+<%= form_for @user, :validate => true do |f| %>
+  <p>
+    <%= f.label :name, '用户姓名：' %>
+    <%= f.text_field :name%></br>
+  </p>
+  <p>
+    <%= f.label :email, '邮箱号码：' %>
+    <%= f.text_field :email%></br>
+  </p>
+  <p>
+    <%= f.label :gender, '用户性别：' %>
+    <%= f.text_field :gender %></br>
+  </p>
+  <p>
+    <%= f.label :password, '设置密码：' %>
+    <%= f.password_field :password%></br>
+  </p>
+  <p>
+    <%= f.label :password_confirmation, "确认密码：" %>
+    <%= f.password_field :password_confirmation%></br>
+  </p>
+  <p>
+    <%= f.label :logo, '用户头像：' %>
+    <%= f.file_field :logo %></br>
+  </p>
+  <%= f.submit '保存' %>
+<% end %>

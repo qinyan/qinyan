@@ -1,0 +1,9 @@
+<div class="tab">
+  <h4>日志</h4>
+  <ul>
+    <li><%= link_to '全部日志', blogs_path %></li>
+    <% if @current_user.present? %>
+      <li><%= link_to '写日志', new_blog_path%></li>
+    <% end -%>
+  </ul>
+</div>
