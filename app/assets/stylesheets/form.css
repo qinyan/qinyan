@@ -47,8 +47,8 @@ span a em.ban_1_2 {background-position: -140px -61px;}
 
 .container footer{margin-top: 40px}
 
-
-
+.table{width: 80%;margin-bottom: 20px;}
+.clear{clear: both;height: 0;line-height: 0;font-size: 0;padding: 0;margin: 0;overflow: hidden;}
 .field_with_errors {display: inline;} 
 .field_with_errors .message {color: #D00;padding-left: 5px;font-size: 12px;}
 textarea{width: 463px; height: 200px;}

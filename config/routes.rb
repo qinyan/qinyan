@@ -12,7 +12,9 @@ Qinyan::Application.routes.draw do
   end
 
   resources :blogs
-  resources :albums
+  resources :albums do
+    resources :photos
+  end
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

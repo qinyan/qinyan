@@ -1,4 +1,4 @@
-<%= render 'nav'%>
+<%= render 'albums/nav'%>
 <h2><%= @album.name %></h2>
 <div class="contenter">
   <div class="blog_list_tit">
@@ -23,4 +23,3 @@
 </div>
 <div class="clear"> </div>
 <%= will_paginate @photos, :previous_label=> '« 上一页', :next_label => '下一页 »'%>
-
