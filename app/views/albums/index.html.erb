@@ -1,0 +1,20 @@
+<%= render 'nav'%>
+<div class="contenter">
+  <div class="newest_user_list">
+    <div class="list_info">
+<% 1.times do%>
+      <ul>
+        <% @albums.each do |album| %>
+
+          <li>
+            <p class="img"><%= image_tag User.first.logo_url(:medium), size: '90x100' %></p>
+            <a href="<%= album_path(album)%>"><p><%= album.name %></p></a>
+          </li>
+        <% end -%>
+      </ul>
+<% end-%>
+    </div>
+  </div>
+</div>
+<%= will_paginate @albums, :previous_label=> '« 上一页', :next_label => '下一页 »'%>
+

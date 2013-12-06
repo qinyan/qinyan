@@ -1,0 +1,7 @@
+<%= form_for @album, :validate => true do |f| %>
+  <p>
+    <%= f.label :name, '相册名称：' %>
+    <%= f.text_field :name%></br>
+  </p>
+  <%= f.submit '保存' %>
+<% end %>

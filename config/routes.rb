@@ -7,13 +7,12 @@ Qinyan::Application.routes.draw do
   resources :products
   resources :users do
     collection do
-      match :login, via: [:get, :post]
       get :logout
     end
   end
 
   resources :blogs
-
+  resources :albums
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

@@ -42,4 +42,12 @@ describe User do
     end
   end
 
+  describe 'user could' do
+    it 'new album' do
+      user = FactoryGirl.create(:user)
+      album = user.albums.build
+      expect(album.user_id).to eq(user.id)
+    end
+  end
+
 end

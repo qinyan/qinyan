@@ -1,0 +1,12 @@
+<%= render 'nav'%>
+<h2><%= @album.name %></h2>
+<div class="contenter">
+    <div class="blog_list_tit">
+      <% if @current_user.present? and @current_user.id == @album.user_id%>
+        <span>
+          <a href="<%= edit_album_path(@album)%>"><em class="ban ban_1_1"></em>编辑</a>
+          <a href="<%= album_path(@album)%>" data-confirm="确定要删除吗？" data-method="delete"><em class="ban ban_1_2"></em>删除</a>
+        </span>
+      <% end -%>
+    </div>
+</div>

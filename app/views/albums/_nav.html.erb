@@ -1,0 +1,9 @@
+<div class="tab">
+  <h4>相册</h4>
+  <ul>
+    <li><%= link_to '所有相册', albums_path %></li>
+    <% if @current_user.present? %>
+      <li><%= link_to '创建相册', new_album_path%></li>
+    <% end -%>
+  </ul>
+</div>

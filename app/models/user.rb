@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
   # validates :email, :email_format => true
   # validates_email :email  :user_info
   has_many :blogs
+  has_many :albums
   has_paper_trail
   mount_uploader :logo, UserLogoUploader
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
