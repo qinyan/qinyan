@@ -1,16 +1,14 @@
 class PhotosController < ApplicationController
 
   before_filter :load_album
-
-  def index
-    @photos = @album.photos.paginate(page: params[:page]||1, per_page: 2)
-  end
+  skip_before_filter :require_login, only: [:show]
 
   def new 
   end
 
   def create
     photo = Photo.new(params.require(:photo).permit(:avatar))
+    photo.name = params[:photo][:avatar].original_filename
     photo.album_id = @album.id
     respond_to do |format|  
       if photo.save  
@@ -26,6 +24,7 @@ class PhotosController < ApplicationController
       end  
     end 
   end
+
   def destroy  
     @photo = Photo.find(params[:id])  
     @photo.destroy  
@@ -33,6 +32,16 @@ class PhotosController < ApplicationController
       format.html { redirect_to album_photos_url(@album.id) }  
       format.json { head :no_content }  
     end  
+  end
+
+  def show
+    @photo = Photo.find(params[:id])
+  end
+
+  def set_cover
+    @photo = Photo.find(params[:id])
+    @album.update_attributes(cover_path: @photo.avatar_url(:medium))
+    redirect_to album_photo_path(@album.id, @photo.id)
   end
 
   private

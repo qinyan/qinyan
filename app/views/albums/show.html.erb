@@ -1,5 +1,5 @@
 <%= render 'nav'%>
-<h2><%= @album.name %></h2>
+<h2><%= @album.name %><span>&nbsp;&nbsp;<a href="<%= new_album_photo_path(@album)%>">上传图片</a></span></h2>  
 <div class="contenter">
   <div class="blog_list_tit">
     <% if @current_user.present? and @current_user.id == @album.user_id%>
@@ -14,7 +14,9 @@
       <ul>
         <% @photos.each do |photo| %>
           <li>
-            <p class="img"><%= image_tag User.first.logo_url(:medium), size: '90x100' %></p>
+            <a href="<%= album_photo_path(@album.id, photo.id)%>">
+              <p class="img"><%= image_tag photo.avatar_url(:medium), size: '90x100' %></p>
+            </a>
           </li>
         <% end -%>
       </ul>

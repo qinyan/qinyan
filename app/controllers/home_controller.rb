@@ -3,9 +3,10 @@ class HomeController < ApplicationController
   skip_before_filter :require_login
 
   def index
-    @products = Product.limit(5)
-    @blogs = Blog.limit(2)
-    @users = User.limit(3)
+    @products = Product.order('id desc').limit(5)
+    @photos = Photo.order('id desc').limit(12)
+    @blogs = Blog.order('id desc').limit(2)
+    @users = User.order('id desc').limit(3)
   end
   
   def login

@@ -1,16 +1,30 @@
 <div class="contenter">
   <div class="newest_product_list">
-    <div class="list_title"><span>最新产品</span></div>
+    <div class="list_title"><span>最新产品</span><%= link_to '更多', products_path, :class => 'float_right' %></div>
     <div class="list_info">
       <% @products.each do |product| %>
         <h3><%= link_to product.name, product_path(product) %></h3>
-        <p><%= product.description %></p>
+        <p><%= product.description.gsub(/&nbsp;/, '').gsub(/<.*?>/, '') rescue nil %></p>
       <% end -%>
     </div>
   </div>
 
+  <div class="newest_user_list">
+    <div class="list_title"><span>最新照片</span><%= link_to '更多', albums_path, :class => 'float_right' %></div>
+    <div class="list_info">
+      <ul>
+        <% @photos.each do |photo| %>
+          <li>
+            <p class="img"><%= link_to image_tag(photo.avatar_url(:medium), size: '90x100'), album_photo_path(photo.album_id, photo.id) %></p>
+          </li>
+        <% end -%>
+      </ul>
+      <div class="clear"></div>
+    </div>
+  </div>
+
   <div class="newest_blog_list">
-    <div class="list_title"><span>最新日志</span></div>
+    <div class="list_title"><span>最新日志</span><%= link_to '更多', blogs_path, :class => 'float_right' %></div>
     <div class="list_info">
       <% @blogs.each do |blog| %>
         <h3><%= link_to blog.name, blog_path(blog) %></h3>
@@ -20,7 +34,7 @@
   </div>
 
   <div class="newest_user_list">
-    <div class="list_title"><span>最新用户</span></div>
+    <div class="list_title"><span>最新用户</span><%= link_to '更多', users_path, :class => 'float_right' %></div>
     <div class="list_info">
       <ul>
         <% @users.each do |user| %>
@@ -29,13 +43,8 @@
             <p><%= user.name %></p>
           </li>
         <% end -%>
-        <% @users.each do |user| %>
-          <li>
-            <p class="img"><%= image_tag user.logo_url(:medium), size: '90x100' %></p>
-            <p><%= user.name %></p>
-          </li>
-        <% end -%>
       </ul>
+      <div class="clear"></div>
     </div>
   </div>
 </div>

@@ -7,6 +7,8 @@
 
 .span9 div.contenter {clear: both;font-size: 14px;}
 .span9 div.contenter .title {color:#3D79cc; height: 30px; margin-top: 10px; text-align:center;}
+.span9 div.contenter .float_right {float: right;font-size: 14px;}
+.span9 .album_right {text-align: right;}
 
 .span9 div.contenter .blog_list_tit span {float: right; margin-top: -30px;padding: 0;}
 .span9 div.contenter .blog_list_tit span a{color:#7E7E7E; cursor: pointer; float: left; margin-left: 10px;}
@@ -15,6 +17,7 @@
 .span9 div.contenter .product_list_tit span a{color:#7E7E7E; cursor: pointer; float: left; margin-left: 10px;}
 
 .span9 h3 a{color: #3D79CC;font-size: 14px;}
+.span9 h2 span{font-size: 14px;}
 
 span a em {cursor: pointer;float: left;}
 span a em.ban { background: url("/images/icon_qy.png?v=20131025") no-repeat scroll 0 0 rgba(0, 0, 0, 0);display: inline-block; height: 20px;line-height: 20px; text-align: center; width: 20px;}
@@ -22,13 +25,13 @@ span a em.ban_1_1 {background-position: -120px -60px;}
 span a em.ban_1_2 {background-position: -140px -61px;}
 
 /*home index*/
-.span9 .contenter .list_title{background: #D7E5EF; font-size: 20px; font-style: oblique; height: 35px;line-height: 35px;}
+.span9 .contenter .list_title{background: #D7E5EF; font-size: 20px; font-style: oblique; height: 35px;line-height: 35px;padding: 0 5px}
 .span9 .contenter .list_title span{margin-left: 2px}
 .span9 .contenter .list_info {margin-left: 15px}
 .span9 .contenter .list_info ul{list-style: none outside none; margin-left: 15px; padding-top: 15px}
 .span9 .contenter .list_info ul li{float: left;width: 120px;}
 .span9 .contenter .list_info ul li p.img{width: 98px;height: 110px;border: 1px solid #D9D9D9;text-align: center;line-height:104px;}
-.span9 .contenter .list_info ul li p img{margin-top: 4px;}
+.span9 .contenter .list_info ul li p img{margin-top: 2px;}
 .span9 .contenter .list_info ul li p{text-align: center; width: 100px;}
 
 

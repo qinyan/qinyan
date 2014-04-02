@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   
-  skip_before_filter :require_login
+  skip_before_filter :require_login, expect: [:index, :show]
   before_filter :load_product, only: [:show, :update, :edit, :destroy]
 
   def index

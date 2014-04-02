@@ -42,6 +42,11 @@ gem "jquery-fileupload-rails"
 # 无损压缩
 gem 'piet'
 
+#api
+gem 'grape'
+gem 'grape-swagger'
+gem 'grape-entity'
+
 group :development, :test do
 
   #测试

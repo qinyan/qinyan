@@ -1,5 +1,8 @@
 class AlbumsController < ApplicationController
 
+  skip_before_filter :require_login, only: [:index, :show]
+
+
   def new
     @album = @current_user.albums.build
   end
@@ -19,7 +22,7 @@ class AlbumsController < ApplicationController
  
   def show
     @album = Album.find(params[:id])
-    @photos = @album.photos.paginate(page: params[:page]||1, per_page: 2)
+    @photos = @album.photos.paginate(page: params[:page]||1, per_page: 10)
   end
 
   def edit
@@ -29,7 +32,7 @@ class AlbumsController < ApplicationController
   def update
     @album = Album.find(params[:id])
     if @album.update_attributes(album_params)
-      redirect_to albums_path
+      redirect_to album_path(params[:id])
     else
       render :edit
      end

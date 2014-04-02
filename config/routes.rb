@@ -1,6 +1,9 @@
 Qinyan::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  mount API => '/'
+  mount Ckeditor::Engine => '/ckeditor'
+
   root :to => 'home#index'
   match 'login' =>'home#login', as: 'login', via:[:get, :post]
   get 'logout' => 'home#logout', as: 'logout'
@@ -13,8 +16,20 @@ Qinyan::Application.routes.draw do
 
   resources :blogs
   resources :albums do
-    resources :photos
+    resources :photos do
+      member do
+        get :set_cover
+      end
+    end
   end
+
+  #ajax start
+  post '/ajax/new_album', to: 'ajax#new_album'
+  #ajax end
+
+  # require 'api/api'
+
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

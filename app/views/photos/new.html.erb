@@ -1,5 +1,7 @@
-<div class="container">  
-  <h2>Upload file</h2>  
+<%= render 'albums/nav'%>
+<div style="text-align: right;"><%= link_to '返回', album_path(@album) %></div>
+<div class="container">
+  <h2><span>上传到&nbsp;&nbsp;</span><%= @album.name %></h2>  
   <%= form_for Photo.new, url: album_photos_path(@album), :html => { :multipart => true, :id => "fileupload"  } do |f| %>  
     <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->  
     <div class="row fileupload-buttonbar">  

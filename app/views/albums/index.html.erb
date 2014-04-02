@@ -2,17 +2,14 @@
 <div class="contenter">
   <div class="newest_user_list">
     <div class="list_info">
-<% 1.times do%>
       <ul>
         <% @albums.each do |album| %>
-
           <li>
-            <p class="img"><%= image_tag User.first.logo_url(:medium), size: '90x100' %></p>
+            <p class="img"><%= image_tag album.cover %></p>
             <a href="<%= album_path(album)%>"><p><%= album.name %></p></a>
           </li>
         <% end -%>
       </ul>
-<% end-%>
     </div>
   </div>
 </div>

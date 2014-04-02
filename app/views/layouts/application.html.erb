@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Qinyan" %></title>
     <%= csrf_meta_tags %>
-
+    <%= favicon_link_tag %>
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
@@ -85,8 +85,8 @@
               <% end -%>
               <ul class="nav nav-list">
                 <li class="nav-header">&nbsp;</li>
-                <li><%= link_to "相册", "/path1"  %></li>
-                <li><%= link_to "日志", "/path2"  %></li>
+                <li><%= link_to "相册", "/albums"  %></li>
+                <li><%= link_to "日志", "/blogs"  %></li>
                 <li><%= link_to "说说", "/path3"  %></li>
               </ul>
             </div><!--/.well -->

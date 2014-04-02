@@ -1,5 +1,8 @@
-<div>
-  <h3><%= @product.name %> </h3>
-  <p>产品图片: <%= image_tag @product.image_url(:small)%></p>
-  <p>产品名称: <%= @product.description %></p>
+<%= render 'nav'%>
+<div class="contenter">
+  <div class="title"><%= @product.name %></div>
+  <div class="content">
+    <p><%= image_tag @product.image_url(:small)%></p>
+    <p>产品介绍: <%= @product.description.html_safe %></p>
+  </div>
 </div>

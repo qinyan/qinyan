@@ -11,7 +11,7 @@
         </span>
       <% end -%>
     </div>
-    <p><%= product.description %></p>
+    <p><%= product.description.gsub(/&nbsp;/, '').gsub(/<.*?>/, '')%></p>
   <% end -%>
 </div>
 <%= will_paginate @products, :previous_label=> '« 上一页', :next_label => '下一页 »' %>

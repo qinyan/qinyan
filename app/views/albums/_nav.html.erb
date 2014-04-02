@@ -3,7 +3,40 @@
   <ul>
     <li><%= link_to '所有相册', albums_path %></li>
     <% if @current_user.present? %>
-      <li><%= link_to '创建相册', new_album_path%></li>
+      <li><%= link_to '创建相册', 'javascript:;', :onclick => "$('#create_album').dialog('open');"%></li>
     <% end -%>
   </ul>
+</div>
+<div class="clear"></div>
+
+<script>
+  $(function() {
+  	$( "#create_album" ).dialog({
+  	  autoOpen: false,
+  	  title: '创建相册',
+  	  buttons: {
+        '取消': function(){
+          $(this).dialog("close");
+        },
+  	    '确认': function(){
+          var album_name = $("#album_name").val();
+          $.post("/ajax/new_album", {album_name:album_name}, function(data){
+            if (data.success){
+              alert('创建成功');
+              $('create_album').dialog("close");
+              window.location.href = "<%= albums_path %>";
+            }else{
+              alert(data.message);
+            }
+          }, 'json');   
+  	    }
+  	  }
+  	});
+  });
+</script>
+
+<div id="create_album" title="Basic dialog">
+  <p>
+    <%= text_field_tag :album_name %>
+  </p>
 </div>

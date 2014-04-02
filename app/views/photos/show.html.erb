@@ -1,0 +1,11 @@
+<%= render 'albums/nav'%>
+<% if @current_user.present? and @current_user.id == @album.user_id%>
+  <div class="album_right"><%= link_to '设为封面', set_cover_album_photo_path(@photo.album_id, @photo.id) %>|<%= link_to '删除', album_photo_path(@album.id, @photo.id), method: :delete, data: { confirm: "确定要删除吗？" }%></div>
+<% end -%>
+<div class="contenter">   
+  <div class="newest_user_list" style="text-align: center;">
+    <%= image_tag @photo.avatar_url(:originals) %>
+  </div>
+</div>
+
+
