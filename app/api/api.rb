@@ -37,7 +37,6 @@ class API < Grape::API
     desc "post user_id"
     params do
       requires :product_id, :type => String, :desc => "product id"
-      requires :product_ids, :type => String, :desc => "product ids"
     end
     post '/:product_id' do
       product = Product.find(params[:product_id])
