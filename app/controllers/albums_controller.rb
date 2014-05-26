@@ -17,12 +17,12 @@ class AlbumsController < ApplicationController
   end
 
   def index
-    @albums = Album.paginate page: params[:page]||1, per_page: 10
+    @albums = Album.paginate page: params[:page]||1, per_page: 12
   end
  
   def show
     @album = Album.find(params[:id])
-    @photos = @album.photos.paginate(page: params[:page]||1, per_page: 10)
+    @photos = @album.photos.paginate(page: params[:page]||1, per_page: 12)
   end
 
   def edit
