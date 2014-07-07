@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="stylesheets/ext_4.2/css/ext-all-neptune.css" rel="stylesheet" />
+    <script src="javascripts/ext_4.2/bootstrap.js"></script>
+    <script src="javascripts/ext_4.2/locale/ext-lang-zh_CN.js"></script>
+    <script src="javascripts/myapp/person.js"></script>
+
+    @RenderSection("script", false)
+</head>
+<body>
+  <script type="text/javascript">
+    
+    Ext.onReady(init);
+
+    // function init() {
+    //   var win = Ext.create("Ext.window.Window", {
+    //       title: '示例窗口',
+    //       width: 300,
+    //       height: 200
+    //   });
+    //   win.show();
+    // }
+    // Ext.onReady(init);
+
+      // function init() {
+      //   Ext.MessageBox.alert("警告框", "Hello ExtJS");
+      //   // Ext.Msg.alert("警告框", "Hello ExtJS");
+      // }
+      // Ext.onReady(init);
+  </script>
+
+
+    @RenderBody()
+</body>
+</html>

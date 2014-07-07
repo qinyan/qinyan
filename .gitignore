@@ -20,4 +20,5 @@
 
 # Customized files.
 public/uploads
+.DS_Store
 
