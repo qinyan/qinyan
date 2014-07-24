@@ -1,0 +1,64 @@
+
+<!doctype html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <title>My HTML File</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="angular-1.2.2/angular.js"></script>
+    <script src="js/services.js"></script>
+    <script src="angular-1.2.2/angular-resource.js"></script>
+    <script src="angular-1.2.2/angular-route.js"></script>
+    <script src="angular-1.2.2/angular-cookies.js"></script>
+    <script src="angular-1.2.2/angular-sanitize.js"></script>
+    <script src="angular-1.2.2/angular-touch.js"></script>
+    <script src="angular-1.2.2/angular-animate.js"></script>
+    <script src="angular-1.2.2/angular-loader.js"></script>
+    <script src="angular-1.2.2/angular-mocks.js"></script>
+    <script src="angular-1.2.2/angular-scenario.js"></script>
+    <script src="js/controllers.js"></script>
+
+
+</head>
+<body>
+
+  <zippy></zippy>
+  <div hello>Bob</div>
+
+
+  <script type="text/javascript">
+
+   
+
+    // var appModule = angular.module('app', []);
+    // appModule.run(function($templateCache) {
+    //   $templateCache.put('helloTemplateCached.html');
+    // });
+    var appModule = angular.module('app', []);
+
+    appModule.run(function($templateCache) {
+      $templateCache.put('yy.html', '<div>sfsdfsfs</div>');
+    });
+
+    appModule.directive("zippy", function() {
+      return {
+        restrict: "E",
+        transclude: true,
+        templateUrl: 'yy.html'
+      }
+    });
+
+    // var appModule = angular.module('app', []);
+    // appModule.run(function($templateCache) {
+    //   $templateCache.put('helloTemplateCached.html', '<div>Hi there</div>');
+    // });
+    // appModule.directive('hello', function() {
+    //   return {restrict: 'E',templateUrl: 'helloTemplateCached.html', replace: true};
+    // });
+
+
+  </script>
+  
+
+</body>
+</html>

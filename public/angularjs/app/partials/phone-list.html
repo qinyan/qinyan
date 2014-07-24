@@ -1,0 +1,40 @@
+<div class="container">
+  <br/>
+  <br/>
+  <br/>
+  <div class="row">
+    <div class="col-md-4">
+      Search: <input ng-model="query">
+      <br/>
+      Sort by:
+      <select ng-model="orderProp">
+        <option value="name">name</option>
+        <option value="age">age</option>
+      </select>
+      <br/>
+      <br/>
+      <p>form example:</p>
+      <div class="col-md-4 form-horizontal">
+        <form name='addUserForm' ng-controller="AddUserController" class="form-group">
+          <div ng-show='message'>{{message}}</div>
+          <div>First name: <input name='firstName' ng-model='user.first' required></div>
+          <div>Last name: <input ng-model='user.last' required></div>
+          <div>Email: <input type='email' ng-model='user.email' required></div>
+          <div>Age: <input type='number' ng-model='user.age' ng-maxlength='3' ng-minlength='1' required></div>
+          <div><button ng-click='addUser()' ng-disabled='!addUserForm.$valid'>Submit</button></div>
+        </ng-form>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <ul class="phones">
+        <li ng-repeat="phone in phones | filter:query | orderBy:orderProp" class="thumbnail">
+          <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
+          <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
+          <p>{{phone.snippet}}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+

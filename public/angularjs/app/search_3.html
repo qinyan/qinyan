@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" ng-app ng-controller="PhoneListCtrl">
+<head>
+    <meta charset="utf-8">
+    <title>Google Phone Gallery: {{query}}</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="angular-1.2.2/angular.min.js"></script>
+    <script src="js/controllers.js"></script>
+</head>
+<body>
+  <div class="container">
+    <br/>
+    <br/>
+    <br/>
+    <div class="row">
+      <div class="col-md-3">
+        Search: <input ng-model="query">
+      </div>
+      <div class="col-md-9">
+        <p>Search key words : {{query}}</p>
+        <ul class="phones">
+          <li ng-repeat="phone in phones | filter:query">
+            {{phone.name}}
+          <p>{{phone.snippet}}</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
